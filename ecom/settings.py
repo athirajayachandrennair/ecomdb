@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'ecom.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'demo12',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST':'localhost',
+        'NAME': os.getenv('demo12'),
+        'USER': os.getenv('root'),
+        'PASSWORD': os.getenv(''),
+        'HOST': os.getenv('localhost'),
         'PORT':'3306',
     }
 }
