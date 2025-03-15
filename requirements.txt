@@ -1,5 +1,5 @@
 appdirs==1.4.4
-asgiref==3.3.4
+asgiref==3.8.1
 astroid==2.3.3
 braintree==4.26.0
 certifi==2024.2.2
@@ -8,8 +8,8 @@ charset-normalizer==3.3.2
 cloudinary==1.42.2
 colorama==0.4.3
 distlib==0.3.1
-Django==3.1.13
-django-cors-headers==4.3.1
+Django==5.1.7
+django-cors-headers==3.5.0
 django-crispy-forms==1.8.1
 django-filter==2.4.0
 django-login-required-middleware==0.4
@@ -31,7 +31,7 @@ pytz==2019.3
 reportlab==4.3.0
 requests==2.31.0
 six==1.13.0
-sqlparse==0.3.0
+sqlparse==0.5.3
 tzdata==2023.4
 urllib3==2.2.1
 virtualenv==20.4.3

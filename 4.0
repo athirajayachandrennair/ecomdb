@@ -1,0 +1,21 @@
+Collecting Django
+  Downloading Django-5.1.7-py3-none-any.whl.metadata (4.1 kB)
+Collecting asgiref<4,>=3.8.1 (from Django)
+  Using cached asgiref-3.8.1-py3-none-any.whl.metadata (9.3 kB)
+Collecting sqlparse>=0.3.1 (from Django)
+  Using cached sqlparse-0.5.3-py3-none-any.whl.metadata (3.9 kB)
+Requirement already satisfied: tzdata in c:\users\athira\appdata\local\programs\python\python311\lib\site-packages (from Django) (2023.4)
+Downloading Django-5.1.7-py3-none-any.whl (8.3 MB)
+   ---------------------------------------- 8.3/8.3 MB 21.4 MB/s eta 0:00:00
+Using cached asgiref-3.8.1-py3-none-any.whl (23 kB)
+Using cached sqlparse-0.5.3-py3-none-any.whl (44 kB)
+Installing collected packages: sqlparse, asgiref, Django
+  Attempting uninstall: sqlparse
+    Found existing installation: sqlparse 0.3.0
+    Uninstalling sqlparse-0.3.0:
+      Successfully uninstalled sqlparse-0.3.0
+  Attempting uninstall: asgiref
+    Found existing installation: asgiref 3.3.4
+    Uninstalling asgiref-3.3.4:
+      Successfully uninstalled asgiref-3.3.4
+Successfully installed Django-5.1.7 asgiref-3.8.1 sqlparse-0.5.3
