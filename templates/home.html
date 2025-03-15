@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-Commerce Home</title>
+</head>
+<body>
+    <h1>Welcome to Our Store</h1>
+
+    <!-- Logout Button -->
+    {% if request.session.user_id %}
+        <p>Logged in as: {{ user.username }} | <a href="{% url 'logout' %}">Logout</a></p>
+    {% else %}
+        <p><a href="{% url 'login' %}">Login</a> | <a href="{% url 'register' %}">Register</a></p>
+    {% endif %}
+
+    {% if request.session.user_id %}
+    <p><a href="{% url 'purchase_history' %}">📜 View Purchase History</a></p>
+{% endif %}
+
+    <!-- Search Bar -->
+    <form method="GET" action="{% url 'home' %}">
+        <input type="text" name="query" placeholder="Search products..." value="{{ request.GET.query }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- View Cart -->
+    {% if request.session.user_id %}
+        <p><a href="{% url 'view_cart' %}">🛒 View Cart</a></p>
+    {% endif %}
+
+    <!-- Product Listing -->
+    {% for product in products %}
+        <div>
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <p>Price: ${{ product.price }}</p>
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" width="200">
+
+            {% if request.session.user_id %}
+                <a href="{% url 'add_to_cart' product.id %}">🛒 Add to Cart</a>
+            {% else %}
+                <p><a href="{% url 'login' %}">Login to add to cart</a></p>
+            {% endif %}
+        </div>
+    {% empty %}
+        <p>No products found.</p>
+    {% endfor %}
+</body>
+</html>

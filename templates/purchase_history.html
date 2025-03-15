@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Purchase History</title>
+</head>
+<body>
+    <h1>🛍️ Your Purchase History</h1>
+
+    {% if orders %}
+        {% for order in orders %}
+            <div>
+                <h3>Order #{{ order.id }} - Placed on {{ order.created_at }}</h3>
+                <p>Total Price: ${{ order.total_price }}</p>
+                <ul>
+                    {% for item in order.orderitem_set.all %}
+                        <li>
+                            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" width="100">
+                            <strong>{{ item.product.name }}</strong> - Quantity: {{ item.quantity }} - ${{ item.product.price }}
+                        </li>
+                    {% endfor %}
+                </ul>
+                <hr>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>You have not placed any orders yet.</p>
+    {% endif %}
+
+    {% for order in orders %}
+    <div>
+        <h3>Order #{{ order.id }} - Placed on {{ order.created_at }}</h3>
+        <p>Total Price: ${{ order.total_price }}</p>
+        <a href="{% url 'download_invoice' order.id %}">📄 Download Invoice</a>
+        <hr>
+    </div>
+{% endfor %}
+    <p><a href="{% url 'home' %}">🏠 Back to Home</a></p>
+</body>
+</html>
